@@ -5,9 +5,7 @@ about: build the training dataset
 author: Xiaohong Liu
 date: 01/08/19
 """
-"""
-수정날짜 : 01/28/20
-"""
+
 # --- Imports --- #
 import torch.utils.data as data
 from PIL import Image
@@ -55,8 +53,8 @@ class TrainData(data.Dataset):
         # --- Transform to tensor --- #
         transform_haze = Compose([ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
         transform_gt = Compose([ToTensor()])
-        haze = transform_haze(haze_crop_img)
-        gt = transform_gt(gt_crop_img)
+        haze = transform_haze(haze_crop_img)[0:3]
+        gt = transform_gt(gt_crop_img)[0:3]
 
         # --- Check the channel is 3 or not --- #
         if list(haze.shape)[0] is not 3 or list(gt.shape)[0] is not 3:
