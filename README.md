@@ -1,3 +1,14 @@
+# Requirement (GridDehazeNet, SRGAN)
+
+python 3.6.10
+pytorch
+torchvision
+sckit-image
+tensorboard
+pandas
+tqdm
+
+______
 # GridDehazeNet
 This repo contains the official training and testing codes for our paper:
 
