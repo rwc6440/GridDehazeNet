@@ -14,6 +14,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
+from torch.utils.tensorboard import SummaryWriter
 from train_data import TrainData
 from val_data import ValData
 from model import GridDehazeNet
@@ -22,7 +23,8 @@ from torchvision.models import vgg16
 from perceptual import LossNetwork
 plt.switch_backend('agg')
 
-
+writer=SummaryWriter()
+      
 # --- Parse hyper-parameters  --- #
 parser = argparse.ArgumentParser(description='Hyper-parameters for GridDehazeNet')
 parser.add_argument('-learning_rate', help='Set the learning rate', default=1e-3, type=float)
@@ -145,6 +147,9 @@ for epoch in range(num_epochs):
         psnr_list.extend(to_psnr(dehaze, gt))
 
         if not (batch_id % 100):
+            writer.add_scalar('smooth loss', smooth_loss, batch_id)
+            writer.add_scalar('perceptual loss', perceptual_loss, batch_id)
+            writer.add_scalar('Loss', loss, batch_id)
             print('Epoch: {0}, Iteration: {1}'.format(epoch, batch_id))
 
     # --- Calculate the average training PSNR in one epoch --- #
