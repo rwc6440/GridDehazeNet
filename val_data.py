@@ -23,7 +23,7 @@ class ValData(data.Dataset):
         with open(val_list) as f:
             contents = f.readlines()
             haze_names = [i.strip() for i in contents]
-            gt_names = [i.split('_')[0] + '.png' for i in haze_names]
+            gt_names = [i.split('.')[0] + '.jpg' for i in haze_names]
 
         self.haze_names = haze_names
         self.gt_names = gt_names
