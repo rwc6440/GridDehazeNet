@@ -1,12 +1,12 @@
 # Requirement (GridDehazeNet, SRGAN)
 
-python 3.6.10
-pytorch
-torchvision
-sckit-image
-tensorboard
-pandas
-tqdm
+- python 3.6.10
+- pytorch
+- torchvision
+- sckit-image
+- tensorboard
+- pandas
+- tqdm
 
 ______
 # GridDehazeNet
