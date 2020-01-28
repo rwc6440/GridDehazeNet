@@ -35,8 +35,8 @@ class ValData(data.Dataset):
         # --- Transform to tensor --- #
         transform_haze = Compose([ToTensor(), Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
         transform_gt = Compose([ToTensor()])
-        haze = transform_haze(haze_img)
-        gt = transform_gt(gt_img)
+        haze = transform_haze(haze_img)[0:3]
+        gt = transform_gt(gt_img)[0:3]
 
         return haze, gt, haze_name
 
