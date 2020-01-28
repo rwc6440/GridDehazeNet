@@ -5,6 +5,9 @@ about: main entrance for validating/testing the GridDehazeNet
 author: Xiaohong Liu
 date: 01/08/19
 """
+"""
+정답이 없는 이미지에 대한 Test 시
+"""
 
 # --- Imports --- #
 import time
