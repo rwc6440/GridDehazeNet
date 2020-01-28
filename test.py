@@ -24,7 +24,7 @@ parser.add_argument('-num_dense_layer', help='Set the number of dense layer in R
 parser.add_argument('-growth_rate', help='Set the growth rate in RDB', default=16, type=int)
 parser.add_argument('-lambda_loss', help='Set the lambda in loss function', default=0.04, type=float)
 parser.add_argument('-val_batch_size', help='Set the validation/test batch size', default=1, type=int)
-parser.add_argument('-category', help='Set image category (indoor or outdoor?)', default='indoor', type=str)
+parser.add_argument('-category', help='Set image category (indoor or outdoor?)', default='outdoor', type=str)
 args = parser.parse_args()
 
 network_height = args.network_height
