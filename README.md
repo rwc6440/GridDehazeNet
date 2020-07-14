@@ -3,7 +3,7 @@
 - python 3.6.10
 - pytorch
 - torchvision
-- sckit-image
+- scikit-image
 - tensorboard
 - pandas
 - tqdm
